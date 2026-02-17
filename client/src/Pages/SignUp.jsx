@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../assets/logo.jpg";
-import Footer from "../components/Footer";
+import Footer from "../components/FooterContent";
 
 function SignUp() {
   return (
