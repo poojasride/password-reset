@@ -46,7 +46,7 @@ function ForgotPassword() {
     } catch (error) {
       // Error message
       alert(
-        error.response?.data?.message ||
+        error.response?.data?.error ||
           "Failed to send reset email. Please try again.",
       );
     } finally {

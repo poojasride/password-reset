@@ -6,7 +6,7 @@ import * as Yup from "yup";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 
-function CreateNewPassword() {
+function ResetPassword() {
   // Get token from URL
   const { token } = useParams();
   const navigate = useNavigate();
@@ -54,7 +54,7 @@ function CreateNewPassword() {
     } catch (error) {
       // Error message
       alert(
-        error.response?.data?.message ||
+        error.response?.data?.error ||
           "Password reset failed. Please try again.",
       );
     } finally {
@@ -139,4 +139,4 @@ function CreateNewPassword() {
   );
 }
 
-export default CreateNewPassword;
+export default ResetPassword;
