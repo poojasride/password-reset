@@ -1,16 +1,101 @@
-# React + Vite
+# Password Reset Flow – Frontend (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend implementation of the password reset flow built using React, React Router, Formik, Yup, and Axios.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Forgot Password form
+- Send reset email request
+- Verify reset token
+- Create new password
+- Form validation using Yup
+- API integration using Axios
+- Navigation using React Router
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- React Router DOM
+- Axios
+- Formik
+- Yup
+- Tailwind CSS
 
-## Expanding the ESLint configuration
+## Pages Included
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 1. Forgot Password Page
+
+User enters email and submits request.
+
+Endpoint used:
+POST /api/auth/forgot-password
+
+---
+
+### 2. Check Email Page
+
+Displays message after email is sent.
+
+Route:
+/check-email
+
+---
+
+### 3. Verify Reset Token Page
+
+Verifies token from URL.
+
+Route:
+
+/verify-reset-token/:token
+
+Endpoint used:
+
+GET /api/auth/verify-reset-token/:token
+
+---
+
+### 4. Create New Password Page
+
+User enters new password and confirms reset.
+
+Endpoint used:
+
+POST /api/auth/reset-password/:token
+
+---
+
+## Installation
+
+Install dependencies:
+
+npm install
+
+Start frontend:
+
+npm run dev
+
+Runs on:
+
+http://localhost:5173
+
+---
+
+## Environment
+
+Make sure backend runs on:
+
+http://localhost:3000
+
+---
+
+## Flow Summary
+
+1. User enters email
+2. Email sent with reset link
+3. User clicks link
+4. Token verified
+5. User creates new password
+6. Password updated successfully
+
+---

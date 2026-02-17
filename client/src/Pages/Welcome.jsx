@@ -1,122 +1,110 @@
-import { Link } from "react-router-dom";
 import Logo from "../components/Logo";
 
-function Welcome() {
+function WelcomeBlog() {
   return (
-    <section className="w-full mt-4">
-   
+    <section className="w-full bg-white min-h-screen">
+      {/* Header */}
+      <header className="max-w-3xl mx-auto  border-b border-gray-200 bg-white  flex  items-center gap-3">
+        <div className="px-6 py-5">
+          <Logo />
+        </div>
+        <span className="text-lg font-semibold text-gray-800 tracking-tight">
+          E-Mart News
+        </span>
+      </header>
 
-      {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-14 items-center">
+      {/* Main Content */}
+      <main className="max-w-3xl mx-auto px-6 py-12">
+        {/* Article Title */}
+        <h1 className="text-4xl font-bold text-gray-900 leading-tight tracking-tight">
+          E-Mart Introduces a Modern Shopping Experience for Everyone
+        </h1>
 
-        {/* Left Content */}
-        <div>
-          <h1 className="text-4xl md:text-5xl font-bold text-[#0F172A] leading-tight">
-           Welcome to <span className="text-green-800">E-Mart</span>
-          </h1>
+        {/* Meta Info */}
+        <div className="mt-3 text-sm text-gray-500">
+          Published on March 17, 2026 • 5 min read
+        </div>
 
-          <p className="mt-6 text-[#475569] text-base md:text-lg max-w-xl leading-relaxed">
-            Discover premium products, seamless shopping experience, and
-            exclusive deals — all in one modern ecommerce platform built for
-            performance and simplicity.
+        {/* Article Body */}
+        <div className="mt-8 space-y-6 text-gray-700 text-lg leading-relaxed">
+          <p>
+            <strong>E-Mart</strong>, a next-generation ecommerce platform, has
+            officially launched with the goal of delivering a seamless and
+            premium shopping experience. Built using modern technologies, the
+            platform ensures speed, performance, and reliability.
           </p>
 
-          <div className="mt-10 flex flex-wrap gap-4">
-            <button
-              to="/products"
-              className="bg-black text-white px-7 py-3 rounded-xl font-medium 
-                         hover:bg-[#3730A3] transition
-                         shadow-md"
-            >
-              Explore Products
-            </button>
+          <p>
+            Customers can explore a wide range of premium products curated
+            carefully to meet modern shopping expectations. The clean and
+            intuitive interface allows users to browse products easily and
+            complete purchases with minimal effort.
+          </p>
 
-            <button
-              to="/cart"
-              className="bg-white border border-gray-300 px-7 py-3 rounded-xl font-medium 
-                         text-[#0F172A] hover:border-gray-400 hover:text-black transition"
-            >
-              View Cart
-            </button>
-          </div>
+          <p>
+            One of the platform’s key strengths is its fully responsive design.
+            Whether on desktop, tablet, or mobile, users enjoy a consistent and
+            smooth experience. Secure payment integration ensures safe and
+            trusted transactions.
+          </p>
+
+          <p>
+            The E-Mart development team has focused heavily on performance
+            optimization and user experience. Fast loading speeds and modern UI
+            design help customers shop efficiently and comfortably.
+          </p>
         </div>
 
-        {/* Right Card */}
-            <div
-              className="bg-gradient-to-br from-black to-[#1F2937] 
-                     rounded-3xl p-10
-                     border border-[#374151]
-                     shadow-md"
-            >
-              <ul className="space-y-6 text-white text-base">
-                <li className="flex gap-4">
-                  <span className="text-white text-xl">✔</span>
-                  Premium quality products curated for you
-                </li>
-                <li className="flex gap-4">
-                  <span className="text-white text-xl">✔</span>
-                  Secure payments with fast checkout experience
-                </li>
-                <li className="flex gap-4">
-                  <span className="text-white text-xl">✔</span>
-                  Clean, modern & fully responsive UI
-                </li>
-                <li className="flex gap-4">
-                  <span className="text-white text-xl">✔</span>
-                  Built using React & modern web technologies
-                </li>
-              </ul>
+        {/* Highlights Section */}
+        <section className="mt-12 bg-gray-50 border border-gray-200 rounded-xl p-6">
+          <h2 className="text-xl font-semibold text-gray-900 mb-4">
+            Key Highlights
+          </h2>
+
+          <ul className="space-y-3 text-gray-700">
+            <li>✔ Premium quality curated products</li>
+            <li>✔ Secure and reliable payment system</li>
+            <li>✔ Fully responsive modern design</li>
+            <li>✔ High performance powered by React</li>
+          </ul>
+        </section>
+
+        {/* Statistics */}
+        <section className="mt-12 border-t border-gray-200 pt-8">
+          <h2 className="text-xl font-semibold text-gray-900 mb-6">
+            Platform Statistics
+          </h2>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div>
+              <div className="text-2xl font-bold text-gray-900">10K+</div>
+              <div className="text-sm text-gray-500 mt-1">Happy Customers</div>
             </div>
 
-              </div>
+            <div>
+              <div className="text-2xl font-bold text-gray-900">500+</div>
+              <div className="text-sm text-gray-500 mt-1">Premium Products</div>
+            </div>
 
-              {/* Stats Section */}
-      <div className="bg-[#F8FAFC] border-t border-[#E5E7EB]">
-        <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
+            <div>
+              <div className="text-2xl font-bold text-gray-900">24/7</div>
+              <div className="text-sm text-gray-500 mt-1">Customer Support</div>
+            </div>
 
-          <div>
-            <h3 className="text-3xl font-bold text-[#0F172A] tracking-tight">
-              10K+
-            </h3>
-            <p className="text-sm text-[#475569] mt-2">
-              Happy Customers
-            </p>
+            <div>
+              <div className="text-2xl font-bold text-gray-900">100%</div>
+              <div className="text-sm text-gray-500 mt-1">Secure Payments</div>
+            </div>
           </div>
+        </section>
 
-          <div>
-            <h3 className="text-3xl font-bold text-[#0F172A] tracking-tight">
-              500+
-            </h3>
-            <p className="text-sm text-[#475569] mt-2">
-              Premium Products
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-3xl font-bold text-[#0F172A] tracking-tight">
-              24/7
-            </h3>
-            <p className="text-sm text-[#475569] mt-2">
-              Customer Support
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-3xl font-bold text-[#0F172A] tracking-tight">
-              100%
-            </h3>
-            <p className="text-sm text-[#475569] mt-2">
-              Secure Payments
-            </p>
-          </div>
-
-        </div>
-      </div>
-
-    
-
+        {/* Footer */}
+        <footer className="mt-12 pt-6 border-t border-gray-200 text-sm text-gray-500">
+          © 2026 E-Mart. All rights reserved.
+        </footer>
+      </main>
     </section>
   );
 }
 
-export default Welcome;
+export default WelcomeBlog;

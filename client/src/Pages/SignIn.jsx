@@ -1,12 +1,14 @@
 import React from "react";
 import Logo from "../components/Logo";
 import Footer from "../components/FooterContent";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import axios from "axios";
 import * as Yup from "yup";
 
 function Signin() {
+  const navigate = useNavigate();
+
   // Step 1 : Initial Values
   const initialValues = {
     email: "",
@@ -42,6 +44,9 @@ function Signin() {
 
       //Reset form after success
       resetForm();
+
+      //Navigate welcome page
+      navigate("/welcome");
     } catch (error) {
       //Error message
       alert(
