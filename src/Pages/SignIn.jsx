@@ -50,7 +50,7 @@ function Signin() {
     } catch (error) {
       //Error message
       alert(
-        error.response?.data?.message || "Signin failed. Please try again.",
+        error.response?.data?.error || "Signin failed. Please try again.",
       );
     }
   };
