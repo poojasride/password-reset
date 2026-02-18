@@ -1,12 +1,14 @@
 import React from "react";
 import logo from "../assets/logo.jpg";
 import Footer from "../components/FooterContent";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 
 function SignUp() {
+  const navigate = useNavigate();
+
   //  Step 1: Initial values for form
   const initialValues = {
     name: "",
@@ -38,9 +40,7 @@ function SignUp() {
   //  Step 3: What happens when form is submitted
   const onSubmit = async (values, { setSubmitting, resetForm }) => {
     try {
-
       console.log(values);
-      
 
       // Start loading
       setSubmitting(true);
@@ -56,11 +56,12 @@ function SignUp() {
 
       // Reset form after success
       resetForm();
+
+      //Navigate to login page
+      navigate("/");
     } catch (error) {
       // Error message
-      alert(
-        error.response?.data?.message || "Signup failed. Please try again.",
-      );
+      alert(error.response?.data?.error || "Signup failed. Please try again.");
     } finally {
       // Stop loading
       setSubmitting(false);
@@ -173,7 +174,10 @@ function SignUp() {
 
                 <h1 className="text-center mt-4 text-gray-600 text-sm">
                   Already have an account?{" "}
-                  <Link to= "/" className="text-gray-800 font-semibold hover:underline cursor-pointer">
+                  <Link
+                    to="/"
+                    className="text-gray-800 font-semibold hover:underline cursor-pointer"
+                  >
                     Sign In
                   </Link>
                 </h1>

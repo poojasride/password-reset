@@ -50,7 +50,7 @@ function ResetPassword() {
       resetForm();
 
       //  Navigate to signin page
-      navigate("/");
+      navigate("/success");
     } catch (error) {
       // Error message
       alert(

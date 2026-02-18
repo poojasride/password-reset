@@ -5,6 +5,7 @@ import CheckEmail from "./Pages/CheckEmail";
 import ResetPassword from "./Pages/ResetPassword";
 import { Routes, Route, Link } from "react-router-dom";
 import WelcomeBlog from "./Pages/Welcome";
+import SuccessReset from "./Pages/SuccessReset";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/check-email" element={<CheckEmail />} />
         <Route path="/reset-password/:token" element={<ResetPassword />} />
         <Route path="/welcome" element={<WelcomeBlog />} />
+        <Route path="/success" element={<SuccessReset/>}/>
       </Routes>
     </>
   );
